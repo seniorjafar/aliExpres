@@ -9,10 +9,10 @@ import { GrCart } from 'react-icons/gr'
 import { toast } from 'react-toastify'
 
 const Product = ({ data, loading }) => {
-    let wishlist = useSelector(state => state.wishlist)
+    const wishlist = useSelector(state => state.wishlist)
     const dispatch = useDispatch()
 
-    let products = data?.map(el => (
+    const products = data?.map(el => (
         <div key={el.id} className="products__card">
             <div className="product-card__img">
                 <img src={el.images[0]} alt="product img" />
@@ -40,9 +40,9 @@ const Product = ({ data, loading }) => {
         </div>
     ))
 
-    let loadingSize = Array(12).fill("")
+    const loadingSize = Array(12).fill("")
 
-    let loadingItem = loadingSize.map((el, i) => (
+    const loadingItem = loadingSize.map((el, i) => (
         <div key={i} className="products__card">
             <div className="product-card__img">
             </div>
@@ -58,6 +58,7 @@ const Product = ({ data, loading }) => {
             </div>
         </div>
     ))
+
     return (
         <section className='products-section'>
             <div className="container">
